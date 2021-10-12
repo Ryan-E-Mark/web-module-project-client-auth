@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Nav Styling */
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+li {
+  list-style: none;
+  padding: 2%;
+  margin-right: 2%;
+}
+
+.nav-text {
+  width: 50%;
+  margin-left: 1%;
+}
