@@ -1,43 +1,21 @@
-.App {
-  text-align: center;
+body {
+  font-size: 62.5%;
+}
+h2 {
+  font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3 {
+  font-size: 1.3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h4 {
+  font-size: 1.15rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p {
+  font-size: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 /* Nav Styling */
 
 nav {
@@ -60,4 +38,24 @@ li {
 .nav-text {
   width: 50%;
   margin-left: 1%;
+}
+
+/* Friend styling */
+
+.friendo {
+  margin: .25%;
+  background-color: beige;
+  width: 35%;
+}
+
+.friendo h3, p{
+  margin: 0;
+  padding: 1%;
+}
+
+.friends-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

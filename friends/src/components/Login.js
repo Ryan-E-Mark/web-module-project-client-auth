@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-const Login = () => {
+const Login = (props) => {
+
+
+    const history = useHistory();
 
     const initialState = {
         credentials: {
@@ -18,6 +22,7 @@ const Login = () => {
             .then(resp => {
                 console.log(resp);
                 localStorage.setItem('token', resp.data.payload);
+                history.push('/friends');   
             })
             .catch(err => {
                 console.log(err);

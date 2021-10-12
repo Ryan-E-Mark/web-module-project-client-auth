@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
+
+import axiosWithAuth from '../Utility/axiosWithAuth';
 import Friend from './Friend';
 
 const FriendsList = () => {
@@ -13,12 +14,8 @@ const FriendsList = () => {
     const [state, setState] = useState(initialState);
 
     useEffect(() => {
-        const token = localStorage.getItem('token')
-        axios.get('http://localhost:5000/api/friends', {
-            headers: {
-                authorization: token
-            }
-        })
+        axiosWithAuth()
+            .get('http://localhost:5000/api/friends')
             .then(resp => {
                 setState({
                     ...state,
@@ -33,7 +30,8 @@ const FriendsList = () => {
 
 
     return (
-        <div>
+        <div className="friends-list">
+            <h2>All of your friends!</h2>
             {state.friends.map(friend => {
                 return (<Friend friend={friend} key={friend.id} />);
             })}
