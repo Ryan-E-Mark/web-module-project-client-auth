@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -6,6 +7,8 @@ import axiosWithAuth from '../Utility/axiosWithAuth';
 import Friend from './Friend';
 
 const FriendsList = () => {
+
+    const history = useHistory();
 
     const initialState = {
         friends: []
@@ -27,15 +30,18 @@ const FriendsList = () => {
             })
     }, [])
 
+    const handleClick = () => {
+        history.push('/friendform');
+    }
 
 
     return (
         <div className="friends-list">
             <h2>All of your friends!</h2>
+            <button onClick={handleClick}>Add More Friends!</button>
             {state.friends.map(friend => {
                 return (<Friend friend={friend} key={friend.id} />);
             })}
-            <Link to='/friendform'>Add Another Friend!</Link>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-const FriendForm = (props) => {
+const FriendForm = () => {
 
     const history = useHistory();
 
@@ -44,33 +44,45 @@ const FriendForm = (props) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label> Name
-                <input
-                    type = "text"
-                    name = "name"
-                    value = {newFriend.name}
-                    onChange={handleChange}
-                />
-            </label>
-            <label> Age
-                <input
-                    type = "text"
-                    name = "age"
-                    value = {newFriend.age}
-                    onChange={handleChange}
-                />
-            </label>
-            <label> Email
-                <input
-                    type = "text"
-                    name = "email"
-                    value = {newFriend.email}
-                    onChange={handleChange}
-                />
-            </label>
-            <button>Submit!</button>
-        </form>
+        <div className="form-div">
+            <h2>Add a new friend</h2>
+            <form onSubmit={handleSubmit} className="form">
+                <div className="input">
+                    <label> Name:
+                        <input
+                            type = "text"
+                            placeholder="Name"
+                            name = "name"
+                            value = {newFriend.name}
+                            onChange={handleChange}
+                        />
+                    </label>
+                </div>
+                <div className="input">
+                <label> Age: 
+                    <input
+                        type = "text"
+                        placeholder="Age"
+                        name = "age"
+                        value = {newFriend.age}
+                        onChange={handleChange}
+                    />
+                </label>
+                </div>
+                <div className="input">
+                <label> Email:
+                    <input
+                        type = "text"
+                        placeholder="Email"
+                        name = "email"
+                        value = {newFriend.email}
+                        onChange={handleChange}
+                    />
+                </label>
+                </div>
+                <button className="btn">Submit!</button>
+            </form>
+        </div>
     )
 }
 

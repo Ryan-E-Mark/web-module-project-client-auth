@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-const Login = (props) => {
+const Login = () => {
 
 
     const history = useHistory();
@@ -39,10 +39,10 @@ const Login = (props) => {
     }
 
     return(
-        <div>
+        <div className="login-div">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                <label> Username
+                <label> Username: 
                     <input
                         type = 'text'
                         name = 'username'
@@ -50,7 +50,7 @@ const Login = (props) => {
                         onChange ={handleChange}
                     />
                 </label>
-                <label> Password
+                <label> Password: 
                     <input
                         type = 'password'
                         name = 'password'
